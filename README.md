@@ -99,7 +99,7 @@ We used K-Means to group the data into k clusters, varying k from two to ten. Th
 We used scikit learn’s GaussianMixture to generate our GMM. Further we leveraged GaussianMixture's Fit method to cluster our data into k clusters, varying k from 2 to 10 where k is the number of introduced genres. GaussianMixture’s Fit method leverages the Expectation Maximization algorithm to return a set of predicted labels ranging from 0 to k. We ran our GMM classifier on a dataset with 1000 observations. These observations contained 64 features each. For k clusters we also cleaned and normalized the labels associated with our observations, i.e. for k clusters we perform our data and label cleaning algorithm. Our data and label cleaning algorithm would tokenize our labels, count unique labels, and then set each label to a normalized, highest occurring label. As we cleaned our data and normalized labels we reduced data sets corresponding to the top k labels for our normalized labels. Respective to a growing k where k ranges from 2 to 10 our data set contained the following observations: 233, 304, 383, 399, 416, 428, 451, 518, and 584. Further, we’ve plotted (Figure 2) these k-observations pairings against their adjusted random score for each of four covariance types: full, diagonal, tied, and spherical.
 
 Figure 2:
-![GMM Performance Plot](GMM/GMM_Results.png)
+![GMM Performance Plot](GMM_Results.png)
 
 **Supervised Methods**:
 1. Random Forest Classifier: Random Forest Classifier works well with non-linear, high dimensional data. While we do not yet know the linearity of our dataset, this method would prove advantageous if our dataset is non-linear.
