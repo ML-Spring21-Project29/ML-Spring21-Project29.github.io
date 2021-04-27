@@ -32,9 +32,9 @@ To compare the effectiveness of difference classification methods on this data, 
 **Figure 3: Feature Contribution Plot**
 ![Contribution Plot](contrib_plot_final.png)
 
-For each set of dimensions we tested (dimensions 1-7, 1-10, 1-13), we found the top n features of highest contribution per dimension (either top 3 or top 10 per dimension). This allowed us to trial the classifiers on a variety of useful feature sets. Consistently, the top contributing features included "chords changes rate", "spectral rolloff", and "key strength" while "spectral speed", "average loudness" and "spectral centroid" seemed to consistently contribute the least amount of information and were typically excluded after dimensionality reduction. The following parameters for dimensionality reduction and feature extraction were tested across models in order to understand how many features seemed to aid in accurate classifications (**Table 2**):
+For each set of dimensions we tested (dimensions 1-7, 1-10, 1-13), we found the top n features of highest contribution per dimension (either top 3 or top 10 per dimension). This allowed us to trial the classifiers on a variety of useful feature sets. Consistently, the top contributing features included "chords changes rate", "spectral rolloff", and "key strength" while "spectral speed", "average loudness" and "spectral centroid" seemed to consistently contribute the least amount of information and were typically excluded after dimensionality reduction. The following parameters for dimensionality reduction and feature extraction were tested across models in order to understand how many features seemed to aid in accurate classifications (**Table 1**):
 
-**Table 2: No. Features Kept Following Dimensionality Reduction**
+**Table 1: No. Features Kept Following Dimensionality Reduction**
 
 |  **Dimensions Kept**  |**Top n Contributing Features per Dimension**|**Kept Features / Total Features**|
 | ----------- | ----------- | ----------- |
@@ -115,9 +115,10 @@ As seen in **Figure 7C** we find that the mean accuracy of our GMM yields an F1 
 **Supervised Methods**:
 
 **1. Random Forest Classifier**: The random forest classifier is implemented using the sklearn library’s Random Forest function.
-Using the raw dataset with no preprocessing, the following preliminary metrics were previously observed in **Table 3**:
+Using the raw dataset with no preprocessing, the following preliminary metrics were previously observed in **Table 2**:
 
-**Table 3: Raw Data Implementation** 
+**Table 2: Raw Data Implementation** 
+
 | % Training/Testing | 75/25 | 50/50 | 25/75 |
 | ------------------ | ----- | ----- | ----- |
 | F1 Score           | 0.03  | 0.02  | 0.01  |
@@ -140,9 +141,10 @@ Generally, including more data in the training set seemed to improve classificat
 ![Precision Plot](RF_precision_scores.png)
 ![Recall Plot](RF_recall_scores.png)
 
-The best F1, Precision and Recall Scores were obtained as shown in **Table 4** with the top score indicated in bold:
+The best F1, Precision and Recall Scores were obtained as shown in **Table 3** with the top score indicated in bold:
 
-**Table 4: Top Scores**
+**Table 3: Top Scores**
+
 | Dims | Top Contrib. Feats per Dimension | F1 Score | Precision Score | Recall Score |
 | ------- | --------------------------------------------| ------------| ---------------------- | --------------- |
 | 1-20 | 9 | **0.26** |0.39 | **0.26** | 
@@ -153,9 +155,10 @@ The highest F1 and Recall Scores were obtained from the same set of parameters, 
 The top F1, Precision and Recall scores are 0.26, 0.40, and 0.25 respectively, and are generally poor in accurately classifying songs by their genre based on this dataset. However, dimensionality reduction and data cleaning has improved classification overall. It is possible that additional kinds of features that may exist for songs may improve genre classification accuracy using Random Forest.
 
 **2. Support Vector Machine (SVM)**: 
-SVM is known to be a generally effective classifier for high dimensional data, however suffers from a long training time with larger dataset sizes. We used sklearn's SVM implementation for it's optimizations, and trialed the classifier by training on 90% of the dataset (randomly selected) and testing on the remaining 10%. As warned by sklearn and the lectures, fitting SVM to the dataset took hours to complete, however the F1 scores were refreshingly accurate. **Table 5** shows the F1 scores for the SVM implementation with each dimension and feature set trialed.
+SVM is known to be a generally effective classifier for high dimensional data, however suffers from a long training time with larger dataset sizes. We used sklearn's SVM implementation for it's optimizations, and trialed the classifier by training on 90% of the dataset (randomly selected) and testing on the remaining 10%. As warned by sklearn and the lectures, fitting SVM to the dataset took hours to complete, however the F1 scores were refreshingly accurate. **Table 4** shows the F1 scores for the SVM implementation with each dimension and feature set trialed.
 
-**Table 5: SVM F1 Results**
+**Table 4: SVM F1 Results**
+
 | %Training/Testing | Dims | Top Contrib. Feats per Dimension | F1 Score | 
 | ----------------- | ---- | ---------------------------------| ---------|
 | 90/10 | 1-7 | 3 | 0.42 |
