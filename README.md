@@ -56,7 +56,7 @@ After extracting meaningful features and cleaning the dataset's labels, five mac
 3. How many dimensions and features are required to improve classification accuracy?
 4. Can music genres be accurately predicted based on this dataset?
 
-Accuracy scores were computed for each method and dimensionality reduction implementation as described in **Table 2** to compare the accuracy of genre predictions across five machine learning methods: K-Means, Gaussian Mixture Model, Random Forest Classifier, Support Vector Machine, and XGBoost.
+Accuracy scores were computed for each method and dimensionality reduction implementation as described in **Table 1** to compare the accuracy of genre predictions across five machine learning methods: K-Means, Gaussian Mixture Model, Random Forest Classifier, Support Vector Machine, and XGBoost.
 
 **Unsupervised Methods**:
 1. K-Means: While not very flexible, K-Means is fast on large datasets and can serve as a baseline to compare against other clustering methods.
